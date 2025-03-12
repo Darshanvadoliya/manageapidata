@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +35,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+table th{
+  background-color: rgb(220, 228, 235);
+}
+table tr{
+  background-color: rgb(247, 247, 247);
+}
+tr, th, td{
+  padding: 15px 10px;
+}
+.view_btn{
+  font-size: 14px;
+  background-color: rgb(202, 223, 170);
+}
+.view_btn:hover{
+  background-color: rgb(247, 169, 124);
+  transition-duration: 0.4s;
+}
+.post_info{
+  background-color: #b7b7b8;
+}
+.comment_box{
+  background-color: rgb(221, 222, 223);
+}
+.post_comment{
+  background-color: rgb(201, 200, 200);
 }
