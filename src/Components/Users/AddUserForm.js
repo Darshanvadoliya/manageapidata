@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 
 function AddUserForm({HeandalSubmit,HeandalFormData}) {
 
-    // const { user, setUser } = useContext(DataContext)
     const { theme } = useContext(ThemeContext)
-    // console.log("usuer inside the ",user);
-
 
     return (
         <div className='d-flex justify-content-between w-100 mb-3'>

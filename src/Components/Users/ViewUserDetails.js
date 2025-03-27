@@ -88,15 +88,3 @@ function ViewUserDetail() {
 }
 
 export default ViewUserDetail
-
-
-
-// async function fetchPost() {
-//     try {
-//         let response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userid}`)
-//         let Postdata = await response.json()
-//         SetPost(Postdata)
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }

@@ -17,7 +17,7 @@ function UserMainTable({ table, users }) {
     }, [users])
 
     const [userdata, setUserData] = useState([])
-    const navigate = useNavigate(); // React Router hook to navigate to different routes
+    const navigate = useNavigate();
 
     function HeandalFormData(e) {
         setUserData((prev) => (
@@ -33,7 +33,6 @@ function UserMainTable({ table, users }) {
         } else {
             setUser((prev) => [...prev, userdata])
         }
-        // Navigate to the home page ("/")
         navigate('/');
     }
 

@@ -7,7 +7,6 @@ import { DataContext, UserInfoContext } from '../Context/allContexts';
 
 
 function UserList() {
-    // const [userInfo, setUserInfo] = useState(0)
     const { userInfo, setUserInfo } = useContext(UserInfoContext)
     let { data: users, isLoading, isError, error } = Getdata("users");
 

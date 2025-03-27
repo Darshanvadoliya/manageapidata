@@ -4,8 +4,6 @@ import { DataContext, UserInfoContext } from '../Context/allContexts'
 // import Table from './Table'
 
 function ViewUserTable({ user, index, romove }) {
-
-    // const { user, setUser } = useContext(DataContext)
     
     const { userInfo, setUserInfo } = useContext(UserInfoContext)
 
