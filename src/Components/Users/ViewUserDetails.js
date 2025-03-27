@@ -36,55 +36,6 @@ function ViewUserDetail() {
         </>
     )
 
-    // for (const post of data) {
-    //     let postId = post.id
-    //     let comments = `comments?postId=${postId}`
-    // let [ data, isLoading, isError, error ] = Getdata(comments)
-    //     console.log("post comment =>",data);
-
-    // }
-    // function fetchPost() {
-    //     try {
-
-    //         fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userid}`)
-    //             .then((response) => response.json())
-    //             .then((postData) => {
-    //                 SetPost(postData)
-
-    //                 let counter = 0;
-    //                 // for loop to push the comments in posts
-    //                 for (let i = 0; i < postData.length; i++) {
-    //                     // console.log("Post Id =>", data[i].id);
-    //                     try {
-    //                         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postData[i].id}`)
-    //                             .then((comments) => comments.json())
-    //                             .then((commentData) => {
-    //                                 console.log('comments got', commentData);
-
-    //                                 postData[i].comments = commentData;
-    //                                 counter++
-    //                                 if (counter === postData.length) {
-    //                                     SetPost(postData);
-    //                                 }
-    //                             })
-    //                             .catch((error) => console.log(error));
-    //                     } catch (error) {
-    //                         console.log("error in try catch =>", error);
-    //                     }
-    //                 }
-    //             })
-    //             .catch((error) => {
-    //                 console.log("fetch Post Error => ", error);
-    //             });
-    //     } catch (error) {
-    //         console.log("fetch Post Error => ", error);
-    //     }
-    // }
-    // useEffect(() => {
-    //     fetchPost()
-    // }, [])
-
-
 }
 
 export default ViewUserDetail
