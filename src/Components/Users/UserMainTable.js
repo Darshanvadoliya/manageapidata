@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
+import AddUserForm from './AddUserForm';
+import { DataContext, ThemeContext } from '../Context/allContexts';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+// import { ThemeContext } from '../Context/ThemeContext';
 // import UserAdd from './UserAdd'
-// import Table from './Table'
 
+function UserMainTable({ table, users }) {
 
-function UserMainTable({ table, users, setUser,}) {
-    
+    const { user, setUser } = useContext(DataContext)
+
+    const { theme } = useContext(ThemeContext)
+
     useEffect(() => {
         setUser(users)
     }, [users])
 
-    const [ userdata, setUserData ] = useState([])
+    const [userdata, setUserData] = useState([])
+    const navigate = useNavigate(); // React Router hook to navigate to different routes
 
     function HeandalFormData(e) {
         setUserData((prev) => (
@@ -19,59 +26,28 @@ function UserMainTable({ table, users, setUser,}) {
     }
 
     function HeandalSubmit() {
-        if(!userdata.name || !userdata.username || !userdata.email){
+        if (!userdata.name || !userdata.username || !userdata.email) {
             alert("pls fill all required fields.")
+
             return
-        }else{
+        } else {
             setUser((prev) => [...prev, userdata])
         }
+        // Navigate to the home page ("/")
+        navigate('/');
     }
 
     return (
         <div className=' container-fluid p-5'>
             <div className='d-flex flex-column align-items-center'>
-                <div className='d-flex justify-content-between w-100 mb-3'>
-                    <h3 className='fw-bold'>User List</h3>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Add User
-                    </button>
 
+                {/* Add User Form*/}
+                <AddUserForm HeandalSubmit={HeandalSubmit} HeandalFormData={HeandalFormData} />
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body">
-                                    <div className='main_form d-flex flex-column align-items-center'>
-                                        <h1>Add New User</h1>
-                                        <div className='form_info p-4 w-100'>
-                                            <form>
-                                                <div className='form_input d-flex flex-column mb-3'>
-                                                    <label>Name :</label>
-                                                    <input className='' type='text' name='name' placeholder='Enter Name' onChange={(e) => HeandalFormData(e)}/>
-                                                </div>
-                                                <div className='form_input d-flex flex-column mb-3'>
-                                                    <label>USer Name :</label>
-                                                    <input className='' type='text' name='username' placeholder='Enter Username' onChange={(e) => HeandalFormData(e)} />
-                                                </div>
-                                                <div className='form_input d-flex flex-column mb-3'>
-                                                    <label>Enter Email :</label>
-                                                    <input className='' type='text' name='email' placeholder='Enter Email' onChange={(e) => HeandalFormData(e)} />
-                                                </div>
-                                                <div className='form_input d-flex flex-column mb-3'>
-                                                    <button type="button" class="btn bg-primary text-white" onClick={() => HeandalSubmit()} data-dismiss="modal">Add USer</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* All User data */}
                 <div className='row w-100'>
                     <div className='col-12'>
-                        <table className='table table-striped '>
+                        <table className={`table table-striped table-${theme}`}>
                             <thead>
                                 <tr>
                                     <th className='ps-3'>Id</th>
@@ -80,7 +56,6 @@ function UserMainTable({ table, users, setUser,}) {
                                     <th>Email</th>
                                     <th>Action</th>
                                 </tr>
-                                {/* <Table /> */}
                             </thead>
                             <tbody>
                                 {table}

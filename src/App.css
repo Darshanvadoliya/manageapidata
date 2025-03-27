@@ -32,34 +32,66 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-table th{
+table th {
   background-color: rgb(220, 228, 235);
 }
-table tr{
+
+table tr {
   background-color: rgb(247, 247, 247);
 }
-tr, th, td{
+
+tr,
+th,
+td {
   padding: 15px 10px;
 }
-.view_btn{
+
+.view_btn {
   font-size: 14px;
   background-color: rgb(202, 223, 170);
 }
-.view_btn:hover{
+
+.view_btn:hover {
   background-color: rgb(247, 169, 124);
   transition-duration: 0.4s;
 }
-.post_info{
+
+.post_info {
   background-color: #b7b7b8;
 }
-.comment_box{
+
+.comment_box {
   background-color: rgb(221, 222, 223);
 }
-.post_comment{
+
+.post_comment {
   background-color: rgb(201, 200, 200);
+}
+
+.dark_theme {
+  background-color: #000000;
+}
+
+.warning_theme {
+  background-color: #d1b176;
+}
+
+.secondary_theme {
+  background-color: #696866;
+}
+
+.dark_theme_h3 {
+  color: white;
+}
+.warning_theme_h3{
+  color: rgb(8, 3, 3);
+}
+.secondary_theme_h3{
+  color: rgb(0, 0, 0);
 }
